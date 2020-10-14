@@ -22,7 +22,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.TextHttpResponseHandler;
 
 import cz.msebera.android.httpclient.Header;
-
+import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     private Candy[] candies;
@@ -71,6 +71,14 @@ public class MainActivity extends AppCompatActivity {
                         //adapter.changeCursor(cursor);
                     }
                 });
+
+                @Override
+                public boolean onOptionsItemSelected(MenuItem item)
+                {
+                    Intent infoIntent =new Intent(this, InfoActivity.class);
+                    startActivity(infoIntent);
+                    return super.onOptionsItemSelected(item);
+                }
     }
 
     @Override
